@@ -8,20 +8,6 @@ function tab (tabSelect) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function dropDown (ddSelect, buttToChange) {
 
 	//console.log("dropDown");
@@ -55,6 +41,16 @@ function clearChildNodes (DDToClear) {
 }
 
 function tabConfig (tabSelect) {
+	//console.log(ddSelect);
+	//clear any existing dropdown option nodes from both From and To dropdowns
+	//do you need to create variables or can you call ID's direct like below? 
+	clearChildNodes(unitsFromDD);
+	clearChildNodes(unitsToDD);
+	unitsFrom.textContent = "Units from";
+	unitsTo.textContent = "Units to";
+	unitsTo.value="";
+	unitsFrom.value="";
+
 	//console.log("tabConfig");
 	let unitTypeSel2 = tabSelect;
 	console.log(unitTypeSel2);
@@ -212,7 +208,7 @@ function formSubmit () {
 	// console.log(unitsFromX);
 	// console.log(unitsToX);
 
-	ddChecker(unitsType);
+	// ddChecker(unitsType);
 	ddChecker(unitsFrom);
 	ddChecker(unitsTo);
 	console.log(userInput.value);

@@ -1,6 +1,31 @@
 
+function tab (tabSelect) {
+
+	console.log(tabSelect);
+	console.log(tabSelect.textValue);
+	tabConfig(tabSelect);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function dropDown (ddSelect, buttToChange) {
+
 	//console.log("dropDown");
+	console.log("ddSElect", ddSelect.value);
 	// set ddStick var to text of dropdown id selected		
 	let ddStick = document.getElementById(ddSelect).text;
 	let ddStickVal = document.getElementById(ddSelect).value;
@@ -29,10 +54,50 @@ function clearChildNodes (DDToClear) {
  	
 }
 
+function tabConfig (tabSelect) {
+	//console.log("tabConfig");
+	let unitTypeSel2 = tabSelect;
+	console.log(unitTypeSel2);
+	//send object with unitsFrom/To DD properties and values based on unitTypeSel to assignConvFac ()
+	 switch (unitTypeSel2) {
+	 	case "density":
+	 		let density =
+				{
+				kg_m3: 1, 
+				g_cm3: 0.001,
+				pcf: 0.06243,
+				ppg: 0.0083,
+				SG: 0.001,
+				};
+			assignConvFac (density);
+	 		break;
+
+	 	case "mass":
+
+	 	let mass =
+				{
+				kg: 1, 
+				g: 0.001,
+				klb: 0.0022046,
+				lb: 2.2046226,
+				m_ton: 0.001,
+				dn: 0.98,
+				kdn: 0.0098,
+				};
+			assignConvFac (mass);
+	 		break;
+ 		
+
+	}
+	
+	
+}
+
 
 
 function ddConfig(ddSelect) {
 	//console.log("ddconfig");
+	console.log(ddSelect);
 	//clear any existing dropdown option nodes from both From and To dropdowns
 	//do you need to create variables or can you call ID's direct like below? 
 	clearChildNodes(unitsFromDD);
@@ -44,6 +109,7 @@ function ddConfig(ddSelect) {
 
 	//set unitTypeSel variable to value of unitsType dropdown selected
 	let unitTypeSel = document.getElementById(ddSelect).value;
+	console.log("unitsSel",unitTypeSel);
 	//send object with unitsFrom/To DD properties and values based on unitTypeSel to assignConvFac ()
 	 switch (unitTypeSel) {
 	 	case "density":
@@ -82,6 +148,7 @@ function ddConfig(ddSelect) {
 function assignConvFac (facPush)  {
 
 	//console.log("assignConvFac")
+	//copies values from pushed object across to new object
 	let convFacObj =Object.assign({}, facPush);
 	//console.log (convFacObj);
 	ddAddLoop (convFacObj);
@@ -93,8 +160,9 @@ function ddAddLoop (convFacObj) {
 	//console.log("ddAddLoop")
 
 	//console.log(Object.keys(convFacObj).length);
+	//set dfLength to keys in object
 			let dfLength = (Object.keys(convFacObj).length);
-
+		//loop for number of object keys getting unit and unit value
 			for (i=0; i<dfLength; i++) {
 	 			
 		 		let unit = Object.keys(convFacObj)[i];
@@ -102,6 +170,7 @@ function ddAddLoop (convFacObj) {
 
 		 		//console.log(unit);
 		 		//console.log(unitVal);
+		 //then send to createDDVal to add unnits to unitsTo and unitsFrom dropdown lists
 				createDDVal(unit, unitVal, unitsFromDD);
 				createDDVal(unit, unitVal, unitsToDD);
 	 		}

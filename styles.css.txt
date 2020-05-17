@@ -1,0 +1,6 @@
+. btn btn-secondary dropdown-toggle {
+	
+	min-width: 500 px;
+
+
+}

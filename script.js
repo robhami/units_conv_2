@@ -2,10 +2,32 @@
 function tab (tabSelect) {
 
 	console.log(tabSelect);
-	console.log(tabSelect.textValue);
+
+
+	for(i=0; i<6; i++)	{
+
+		if((unitsTab.children[i].classList)="nav-link active"){
+
+
+			console.log("hello");
+
+		// if (unitsTab.children[i].children[0])
+		// 	$(".nav-link").click( function() {
+		//             $(".nav-link").removeClass("active");
+		//         });
+		}
+	}
+
+	let tabVar =document.getElementById(tabSelect);
+	tabVar.setAttribute("class", "nav-link active");
+	console.log(tabVar);
+	tabvar="";
 	tabConfig(tabSelect);
 
+
 }
+
+
 
 
 function dropDown (ddSelect, buttToChange) {
@@ -52,6 +74,7 @@ function tabConfig (tabSelect) {
 	unitsFrom.value="";
 
 	//console.log("tabConfig");
+	//can't pass value maybe to do with it being a li element so use id to set unitTypeSel, with dropdown version used value
 	let unitTypeSel2 = tabSelect;
 	console.log(unitTypeSel2);
 	//send object with unitsFrom/To DD properties and values based on unitTypeSel to assignConvFac ()

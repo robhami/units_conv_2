@@ -1,13 +1,38 @@
 .btn {
 	
-	min-width:  115px;
-
+	width:  130px;
+	
 
 }
 
 .form-control {
 
-	min-width:  115px;
+	float:left;
+    width:130px;
 }
 
+
+.dropdown-menu {
+	
+	width:  130px;
+	
+
+}
+
+
+#unitsTab > .nav-item > .nav-link {
+
+	width: 90px;
+	border: solid #FFFF 1px ;
+	padding-right: 0px;
+	padding-left: 0px;
+	margin: 0.5px;
+}
+
+#unitsTab > .nav-item > .nav-link > .a {
+
+	
+	padding-right: 0px;
+	padding-left: 0px;
+}
 

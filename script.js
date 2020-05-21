@@ -1,27 +1,6 @@
 
 function tab (tabSelect) {
 
-	console.log(tabSelect);
-
-
-	for(i=0; i<6; i++)	{
-
-		if((unitsTab.children[i].classList)="nav-link active"){
-
-
-			console.log("hello");
-
-		// if (unitsTab.children[i].children[0])
-		// 	$(".nav-link").click( function() {
-		//             $(".nav-link").removeClass("active");
-		//         });
-		}
-	}
-
-	let tabVar =document.getElementById(tabSelect);
-	tabVar.setAttribute("class", "nav-link active");
-	console.log(tabVar);
-	tabvar="";
 	tabConfig(tabSelect);
 
 
@@ -68,8 +47,8 @@ function tabConfig (tabSelect) {
 	//do you need to create variables or can you call ID's direct like below? 
 	clearChildNodes(unitsFromDD);
 	clearChildNodes(unitsToDD);
-	unitsFrom.textContent = "Units from";
-	unitsTo.textContent = "Units to";
+	unitsFrom.textContent = "Units From";
+	unitsTo.textContent = "Units To";
 	unitsTo.value="";
 	unitsFrom.value="";
 

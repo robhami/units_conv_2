@@ -26,9 +26,9 @@
 					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
+					<a class="nav-link" href="#">Units Converter</a>
 				</li>
-				<li class="nav-item dropdown">
+				<!-- <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Dropdown
 					</a>
@@ -38,10 +38,10 @@
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#">Something else here</a>
 					</div>
-				</li>
-				<li class="nav-item">
+				</li> -->
+				<!-- <li class="nav-item">
 					<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-				</li>
+				</li> -->
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
 				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -59,7 +59,9 @@
 
 						<div class="card-header">
 							<h2>Units Converter</h2>
+								<dt> Select Units Type: </dt>
 							<ul class="nav nav-pills" id="unitsTab">
+								
 								<li class="nav-item" id="massNav" >
 									<a class="nav-link" href="#"  id="mass" data-toggle="tab" onclick="tab(this.id)">Mass</a>
 								</li>
@@ -80,20 +82,24 @@
 									<a class="nav-link" href="#" id="torque" data-toggle="tab" onclick="tab(this.id)">Torque</a>
 								</li>
 
+								<li class="nav-item">
+									<a class="nav-link" href="#" id="area" data-toggle="tab" onclick="tab(this.id)">Area</a>
+								</li>
+
 							</ul>
 						</div>
 					</div>
 
 					<div class="card-body">
-
+						<dt> Select Units To Convert: </dt>
 
 						<div class="input-group mb-3">
-
+							
 							<div class="dropdown" >
 								<button class="btn btn-secondary dropdown-toggle" type="button" id="unitsFrom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Units From</button>
 
 								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="unitsFromDD">
-									<option class="dropdown-item" href="#">Select Units</option>	
+									<option class="dropdown-item" href="#">Select Units Type</option>	
 								</div>
 							</div>
 
@@ -112,7 +118,7 @@
 								<button class="btn btn-secondary dropdown-toggle" type="button" id="unitsTo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Units To</button>
 
 								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="unitsToDD">
-									<option class="dropdown-item" href="#">Select Units</option>		
+									<option class="dropdown-item" href="#">Select Units Type</option>		
 								</div>
 							</div>
 

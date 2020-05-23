@@ -22,6 +22,9 @@ function dropDown (ddSelect, buttToChange) {
 	//console.log(ddStick);
 	//console.log(ddStickVal);
 	userOutput.value="Result";
+
+	userInput.value="";
+
 	//unitsTo.value="";
 	//unitsFrom.value="";
 
@@ -51,6 +54,10 @@ function tabConfig (tabSelect) {
 	unitsTo.textContent = "Units To";
 	unitsTo.value="";
 	unitsFrom.value="";
+	userInput.value="";
+	userOutput.value="";
+	// document.getElementById("userInput").placeholder = "Value from";
+
 
 	//console.log("tabConfig");
 	//can't pass value maybe to do with it being a li element so use id to set unitTypeSel, with dropdown version used value
@@ -58,17 +65,6 @@ function tabConfig (tabSelect) {
 	console.log(unitTypeSel2);
 	//send object with unitsFrom/To DD properties and values based on unitTypeSel to assignConvFac ()
 	 switch (unitTypeSel2) {
-	 	case "density":
-	 		let density =
-				{
-				kg_m3: 1, 
-				g_cm3: 0.001,
-				pcf: 0.06243,
-				ppg: 0.0083,
-				SG: 0.001,
-				};
-			assignConvFac (density);
-	 		break;
 
 	 	case "mass":
 
@@ -85,6 +81,101 @@ function tabConfig (tabSelect) {
 			assignConvFac (mass);
 	 		break;
  		
+	 	case "length":
+	 		let length =
+				{
+				m: 1, 
+				ft: 3.28084,
+				km: 0.001,
+				inch: 39.37008,
+				mile: 0.00062,
+				cm: 100,
+				mm: 1000,
+				yard: 1.09361,
+
+				};
+			assignConvFac (length);
+	 		break;
+
+	 	
+		case "density":
+	 		let density =
+				{
+				kg_m3: 1, 
+				g_cm3: 0.001,
+				pcf: 0.06243,
+				ppg: 0.0083,
+				SG: 0.001,
+				};
+			assignConvFac (density);
+	 		break;
+
+ 		case "flow":
+	 		let flow =
+				{
+				LPM: 1, 
+				GPM_US: 0.26417,
+				ft3_min: 0.06243,
+				m3_min: 0.001,
+				in3_min: 61.02376,
+				BBL_US_min: 0.00629,
+				ml_min: 1000,
+
+				};
+
+			assignConvFac (flow);
+	 		break;
+
+ 		case "pressure":
+	 		let pressure =
+				{
+				bar: 1, 
+				psi: 14.50377,
+				Pa: 100000,
+				kPa: 100,
+				mPa: 0.1,
+				atm: 0.98692,
+				kg_cm2: 1.01972,
+				kg_m2: 10197.16,
+				
+
+				};
+
+			assignConvFac (pressure);
+	 		break;
+
+ 		case "torque":
+	 		let torque =
+				{
+				N_m: 1,
+				ft_lb: 0.737562,
+				kft_lb: 0.000737562,
+				kg_m: 0.1019716,
+				kN_m: 0.001,
+				
+
+				};
+
+			assignConvFac (torque);
+	 		break;
+
+ 		case "area":
+	 		let area =
+				{
+				m2: 1,
+				cm2: 10000,
+				in2: 1550,
+				ft2: 1.19599,
+				mm2: 1000000,
+				
+				
+
+				};
+
+			assignConvFac (area);
+	 		break;
+
+
 
 	}
 	

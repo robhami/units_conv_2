@@ -23,7 +23,7 @@ function dropDown (ddSelect, buttToChange) {
 	//console.log(ddStickVal);
 	userOutput.value="Result";
 
-	userInput.value="";
+	// userInput.value="";
 
 	//unitsTo.value="";
 	//unitsFrom.value="";
@@ -70,13 +70,13 @@ function tabConfig (tabSelect) {
 
 	 	let mass =
 				{
-				kg: 1, 
-				g: 0.001,
 				klb: 0.0022046,
 				lb: 2.2046226,
-				m_ton: 0.001,
-				dn: 0.98,
+				metric_ton: 0.001,
+				kg: 1, 
+				dn: 0.9807,
 				kdn: 0.0098,
+				g: 1000,
 				};
 			assignConvFac (mass);
 	 		break;
@@ -101,11 +101,12 @@ function tabConfig (tabSelect) {
 		case "density":
 	 		let density =
 				{
+				ppg: 0.0083,
+				SG: 0.001,
 				kg_m3: 1, 
 				g_cm3: 0.001,
 				pcf: 0.06243,
-				ppg: 0.0083,
-				SG: 0.001,
+				
 				};
 			assignConvFac (density);
 	 		break;
@@ -343,7 +344,7 @@ function getResult (userInputVal) {
 	// ddChecker (unitsFromX);
 	// ddChecker (unitsFromX);
 
-	resultX= +(userInputVal*(unitsToX/unitsFromX)).toFixed(5);
+	resultX= +(userInputVal*(unitsToX/unitsFromX)).toFixed(7);
 	//console.log(resultX);
 	// addResult (resultX);
 	userOutput.value = resultX;

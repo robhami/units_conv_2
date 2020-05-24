@@ -19,20 +19,14 @@ function dropDown (ddSelect, buttToChange) {
 	//change button value to ddStick text & value
 	buttToChange.textContent = ddStick;
 	buttToChange.value = ddStickVal;
-	//console.log(ddStick);
-	//console.log(ddStickVal);
+	
 	userOutput.value="Result";
 
-	// userInput.value="";
-
-	//unitsTo.value="";
-	//unitsFrom.value="";
-
 	//if button changed is unitsType, send ddSelect to DDconfig to configure units From & To dropdowns
-	if((buttToChange.id)=="unitsType"){
+	// if((buttToChange.id)=="unitsType"){
 			
-		return ddConfig(ddSelect, buttToChange);
-	}
+	// 	return ddConfig(ddSelect, buttToChange);
+	// }
 }
 
 function clearChildNodes (DDToClear) {
@@ -185,55 +179,55 @@ function tabConfig (tabSelect) {
 
 
 
-function ddConfig(ddSelect) {
-	//console.log("ddconfig");
-	console.log(ddSelect);
-	//clear any existing dropdown option nodes from both From and To dropdowns
-	//do you need to create variables or can you call ID's direct like below? 
-	clearChildNodes(unitsFromDD);
-	clearChildNodes(unitsToDD);
-	unitsFrom.textContent = "Units from";
-	unitsTo.textContent = "Units to";
-	unitsTo.value="";
-	unitsFrom.value="";
+// function ddConfig(ddSelect) {
+// 	//console.log("ddconfig");
+// 	console.log(ddSelect);
+// 	//clear any existing dropdown option nodes from both From and To dropdowns
+// 	//do you need to create variables or can you call ID's direct like below? 
+// 	clearChildNodes(unitsFromDD);
+// 	clearChildNodes(unitsToDD);
+// 	unitsFrom.textContent = "Units from";
+// 	unitsTo.textContent = "Units to";
+// 	unitsTo.value="";
+// 	unitsFrom.value="";
 
-	//set unitTypeSel variable to value of unitsType dropdown selected
-	let unitTypeSel = document.getElementById(ddSelect).value;
-	console.log("unitsSel",unitTypeSel);
-	//send object with unitsFrom/To DD properties and values based on unitTypeSel to assignConvFac ()
-	 switch (unitTypeSel) {
-	 	case "density":
-	 		let density =
-				{
-				kg_m3: 1, 
-				g_cm3: 0.001,
-				pcf: 0.06243,
-				ppg: 0.0083,
-				SG: 0.001,
-				};
-			assignConvFac (density);
-	 		break;
+// 	//set unitTypeSel variable to value of unitsType dropdown selected
+// 	// let unitTypeSel = document.getElementById(ddSelect).value;
+// 	// console.log("unitsSel",unitTypeSel);
+// 	// //send object with unitsFrom/To DD properties and values based on unitTypeSel to assignConvFac ()
+// 	//  switch (unitTypeSel) {
+// 	//  	case "density":
+// 	//  		let density =
+// 	// 			{
+// 	// 			kg_m3: 1, 
+// 	// 			g_cm3: 0.001,
+// 	// 			pcf: 0.06243,
+// 	// 			ppg: 0.0083,
+// 	// 			SG: 0.001,
+// 	// 			};
+// 	// 		assignConvFac (density);
+// 	//  		break;
 
-	 	case "mass":
+// 	//  	case "mass":
 
-	 	let mass =
-				{
-				kg: 1, 
-				g: 0.001,
-				klb: 0.0022046,
-				lb: 2.2046226,
-				m_ton: 0.001,
-				dn: 0.98,
-				kdn: 0.0098,
-				};
-			assignConvFac (mass);
-	 		break;
+// 	//  	let mass =
+// 	// 			{
+// 	// 			kg: 1, 
+// 	// 			g: 0.001,
+// 	// 			klb: 0.0022046,
+// 	// 			lb: 2.2046226,
+// 	// 			m_ton: 0.001,
+// 	// 			dn: 0.98,
+// 	// 			kdn: 0.0098,
+// 	// 			};
+// 	// 		assignConvFac (mass);
+// 	//  		break;
  		
 
-	}
+// 	// }
 	
 	
-}
+// }
 
 function assignConvFac (facPush)  {
 

@@ -49,3 +49,14 @@ dt {
 	text-align: left;
 
 } 
+
+.card {
+
+	max-width: 325px;
+	min-width:325px;
+}
+
+ .container {
+
+ 	padding-top:10px;
+ }
